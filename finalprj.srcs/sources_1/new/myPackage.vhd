@@ -16,7 +16,7 @@ package MyPackage is
              );
     end component;
     
-    function INT_TO_7SEG( BCD: integer range 0 to 10:= 0)
+    function INT_TO_7SEG( BCD: integer := 0)
     return std_logic_vector;
     
     function TIME_IN_SECONDS(HOURS, MINUTES, SECONDS: integer)
@@ -31,33 +31,33 @@ end package MyPackage;
 
 package body myPackage is
     
-    function INT_TO_7SEG( BCD: integer range 0 to 10:= 0)
+    function INT_TO_7SEG( BCD: integer := 0)
     return std_logic_vector is
-        variable RESULT: std_logic_vector(7 downto 0);
+        variable RESULT: std_logic_vector(6 downto 0);
     begin
         case BCD is
             when 0 =>        
-                RESULT:= b"00000001"; -- 0
+                RESULT:= b"0000001"; -- 0
             when 1 =>        
-                RESULT:= b"01001111"; -- 1
+                RESULT:= b"1001111"; -- 1
             when 2 =>        
-                RESULT:= b"00010010"; -- 2
+                RESULT:= b"0010010"; -- 2
             when 3 =>        
-                RESULT:= b"00000110"; -- 3
+                RESULT:= b"0000110"; -- 3
             when 4 =>        
-                RESULT:= b"01001100"; -- 4
+                RESULT:= b"1001100"; -- 4
             when 5 =>        
-                RESULT:= b"00100100"; -- 5
+                RESULT:= b"0100100"; -- 5
             when 6 =>        
-                RESULT:= b"00100000"; -- 6
+                RESULT:= b"0100000"; -- 6
             when 7 =>        
-                RESULT:= b"00001111"; -- 7
+                RESULT:= b"0001111"; -- 7
             when 8 =>        
-                RESULT:= b"00000000"; -- 8
+                RESULT:= b"0000000"; -- 8
             when 9 =>        
-                RESULT:= b"00000100"; -- 9
+                RESULT:= b"0000100"; -- 9
             when others =>            -- un_acceptable for a digit
-                RESULT:= b"01111111";
+                RESULT:= b"1111111";
         end case;
         return RESULT;
     end function;
