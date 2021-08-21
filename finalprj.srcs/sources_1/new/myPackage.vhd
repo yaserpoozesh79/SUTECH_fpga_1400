@@ -12,7 +12,7 @@ package MyPackage is
         port(RESET, CLK, SET_TIME, SET_ALARM, STOP_ALARM, ALARM_ON, CLOCK_ON:in std_logic; 
              H_IN1, H_IN0, M_IN1, M_IN0 :in  unsigned(3 downto 0);
              ALARM:out std_logic;
-             H_OUT1, H_OUT0, M_OUT1, M_OUT0, S_OUT1, S_OUT0:out std_logic_vector(7 downto 0) 
+             H_OUT1, H_OUT0, M_OUT1, M_OUT0, S_OUT1, S_OUT0:out std_logic_vector(6 downto 0) 
              );
     end component;
     
